@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  assistant:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/app/model/nlu_pipeline.joblib
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+    volumes:
+      - ./:/app
